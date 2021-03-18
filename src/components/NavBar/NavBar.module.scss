@@ -1,0 +1,7 @@
+.navBar {
+    grid-column-start: 0;
+    grid-column-start: 1;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
