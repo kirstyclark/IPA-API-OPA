@@ -1,3 +1,4 @@
+import { getBeers, searchBeers, findStrong } from './services/beer.service.js';
 import CardList from './components/CardList';
 import NavBar from './components/NavBar';
 import React, { useState, useEffect } from 'react';
@@ -8,40 +9,34 @@ const App = () => {
 
   const [beers, setBeers] = useState([]);
 
-  useEffect(() => {
-    fetch('https://api.punkapi.com/v2/beers').then((response) => {
-      return response.json();
-    }).then((response) => {
-      setBeers(response);
-    })
+  useEffect(async () => {
+    const beers = await getBeers();
+    setBeers(beers);
   }, []);
 
-  const fetchSearch = (searchText) => {
-    if (searchText.length > 0 ) {
-      fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchText}`).then((response) => {
-        return response.json();
-      }).then((response) => {
-        console.log(response)
-        setBeers(response);
-      })
-    } else {
-      setBeers([]);
-    }
+  const fetchSearch = async (searchText) => {
+    const beers = await searchBeers(searchText);
+    setBeers(beers);
   };
 
-  const fetchAbv = () => {
-    fetch(`https://api.punkapi.com/v2/beers?abv_gt=6`).then((response) => {
-      return response.json();
-    }).then((response) => {
-      console.log(response)
-      setBeers(response)
-    })
+  const fetchAbv = async () => {
+    const beers = await findStrong();
+    setBeers(beers);
+  }
+
+  const [listOrder, setOrder] = useState('');
+
+  const order = (selectedChoice) => {
+    if (setBeers !== []) {
+      console.log(beers)
+      return setOrder(selectedChoice)
+    }
   }
 
   return (
     <div className={styles.app}>
-      <NavBar updateSearchText={fetchSearch} updateScale={fetchAbv}/>
-      <CardList beers={beers}/>
+      <NavBar updateSearchText={fetchSearch} updateAbv={fetchAbv} updateOrder={order} />
+      <CardList beers={beers} listOrder={listOrder} />
     </div>
   )
 }

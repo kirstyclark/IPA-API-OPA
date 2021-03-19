@@ -5,6 +5,7 @@ const CheckBox = (props) => {
 
     return (
         <div className={styles.CheckBox}>
+            <label>High ABV (&gt; 6.0%)</label>
             <input type='checkbox' onClick={event => updateAbv(event)} />
         </div>
     )
