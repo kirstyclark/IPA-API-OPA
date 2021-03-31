@@ -12,5 +12,14 @@
         height: 50vh;
         width: 15vw;
         border: white 5px solid;
+
+        h4 {
+            padding: 5px;
+            margin-bottom: 1vh;
+            font-family: $primary-font;
+            text-transform: uppercase;
+            color: white;
+            font-size: $font-m;
+        }
     }
 }

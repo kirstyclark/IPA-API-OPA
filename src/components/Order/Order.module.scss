@@ -3,19 +3,25 @@
 .order {
     color: white;
     font-family: $primary-font;
+    font-size: $font-m;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 1vh;
 
     button {
         background: none;
         color: inherit;
         border: none;
-        padding: 0;
+        padding: 5px;
         font: inherit;
         outline: inherit;
-        font-size: $font-s;
-        margin-bottom: 1vh;
         cursor: pointer;
+        text-align: start;
+    }
+
+    button:focus {
+        background-color: white;
+        color: $blue;
     }
 }

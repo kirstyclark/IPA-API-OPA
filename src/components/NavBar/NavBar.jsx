@@ -9,9 +9,11 @@ const NavBar = (props) => {
     return (
         <div className={`navbar ${styles.navbar}`}>
             <div className={styles.navContainer}>
+                <h4>Filter...</h4>
                 <SearchBar updateSearchText={props.updateSearchText}/>
-                <Order updateOrder={props.updateOrder}/>
                 <CheckBox updateAbv={props.updateAbv}/>
+                <h4>Order...</h4>
+                <Order updateOrder={props.updateOrder}/>
             </div>
         </div>
     )

@@ -1,0 +1,20 @@
+@import '../../assets/styles.scss';
+
+.searchBar {
+    
+    margin: 1vh;
+
+    input {
+        font-size: $font-m;
+        font-family: $primary-font;
+        background-color: $blue;
+        border: white 2px solid;
+        color: white;
+    }
+
+    input:focus {
+        background-color: white;
+        color: $blue;
+        border: $blue 2px solid;
+    }
+}
