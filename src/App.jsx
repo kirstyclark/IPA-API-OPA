@@ -14,6 +14,12 @@ const App = () => {
     setBeers(beers);
   }, []);
 
+  const reload = async() => {
+    console.log('home')
+    const beers = await getBeers();
+    setBeers(beers);
+  }
+
   const fetchSearch = async (searchText) => {
     const beers = await searchBeers(searchText);
     setBeers(beers);
@@ -34,7 +40,7 @@ const App = () => {
 
   return (
     <div className={`app ${styles.app}`}>
-      <NavBar updateSearchText={fetchSearch} updateAbv={fetchAbv} updateOrder={order} />
+      <NavBar reload={reload} updateSearchText={fetchSearch} updateAbv={fetchAbv} updateOrder={order} />
       <CardList beers={beers} listOrder={listOrder} />
     </div>
   )
