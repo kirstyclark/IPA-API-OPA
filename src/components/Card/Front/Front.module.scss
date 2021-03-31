@@ -1,0 +1,47 @@
+@import '../../../assets/styles.scss';
+
+.front {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+
+    .imgContainer {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25vw;
+
+        img {
+            height: 22vw;
+        }
+    }
+
+    .textContainer {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;   
+
+        h2, h3 {
+            writing-mode: vertical-rl;
+            transform: rotate(180);
+            font-family: $title-font;
+            font-size: $font-s;
+            margin: 1vw;
+        }
+
+        .beerName {
+            text-transform: uppercase;
+            max-height: 15ch;
+            max-width: 3ch;
+            overflow: hidden;
+        }
+    }
+    
+
+}
+

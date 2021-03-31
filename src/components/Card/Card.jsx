@@ -1,4 +1,7 @@
-import styles from './Card.module.scss'
+import { useState } from 'react';
+import styles from './Card.module.scss';
+import Front from './Front';
+import Back from './Back';
 
 const Card = (props) => {
 
@@ -11,14 +14,18 @@ const Card = (props) => {
         abv     
     } = props.beer;
 
+    const [flipped, setFlip] = useState(false);
+
+    const toggleCard = () => {
+        flipped == true ? setFlip(false) : setFlip(true);
+    }
+
     return (
-        <div className={styles.card}>
-            <img src={image_url} alt={name}/>
-            <h2>{name}</h2>
-            <h4>{tagline}</h4>
-            <p>{description}</p>
-            <h6>{abv}</h6>
-            <h6>{first_brewed}</h6>
+        <div className={styles.card} onClick={toggleCard}>
+            {flipped == true ? 
+            <Back name={name} tagline={tagline} description={description} first_brewed={first_brewed}/> : 
+            <Front name={name} img={image_url} abv={abv}/>
+            }   
         </div>
     )
 }

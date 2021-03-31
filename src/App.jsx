@@ -28,13 +28,12 @@ const App = () => {
 
   const order = (selectedChoice) => {
     if (setBeers !== []) {
-      console.log(beers)
       return setOrder(selectedChoice)
     }
   }
 
   return (
-    <div className={styles.app}>
+    <div className={`app ${styles.app}`}>
       <NavBar updateSearchText={fetchSearch} updateAbv={fetchAbv} updateOrder={order} />
       <CardList beers={beers} listOrder={listOrder} />
     </div>

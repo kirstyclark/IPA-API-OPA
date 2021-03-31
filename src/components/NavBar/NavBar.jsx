@@ -5,11 +5,14 @@ import CheckBox from '../Checkbox';
 import styles from './NavBar.module.scss';
 
 const NavBar = (props) => {
+
     return (
-        <div className={styles.navBar}>
-            <Order updateOrder={props.updateOrder}/>
-            <SearchBar updateSearchText={props.updateSearchText}/>
-            <CheckBox updateAbv={props.updateAbv}/>
+        <div className={`navbar ${styles.navbar}`}>
+            <div className={styles.navContainer}>
+                <SearchBar updateSearchText={props.updateSearchText}/>
+                <Order updateOrder={props.updateOrder}/>
+                <CheckBox updateAbv={props.updateAbv}/>
+            </div>
         </div>
     )
 }

@@ -1,9 +1,9 @@
-.card {
-    height: 450px;
-    width: 300px;
-    background-color: white;
+@import '../../assets/styles.scss';
 
-    img {
-        height: 100px;
-    }
+.card {
+    height: 25vw;
+    width: clamp(160px, 220px, 320px);
+    border: white 5px solid;
+    display: inline-block;
+    margin: 4vh 0 4vh 0;
 }

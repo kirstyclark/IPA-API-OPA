@@ -1,11 +1,15 @@
+@import './assets/styles.scss';
+
 .app {
+    background-color: $blue; 
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+* {
     margin-block-end: 0;
     margin-block-start: 0;
     margin-inline-end: 0;
     margin-inline-start: 0;
-    background-color: blue;
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
 }
+

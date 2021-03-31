@@ -10,14 +10,11 @@ const Order = (props) => {
 
     return (
         <div className={styles.order}>
-            <label>View options</label>
-            <select id='order-options' onChange={orderChoice}>
-                <option value=''></option>
-                <option value='a-z'>Alphabetical; A-Z</option>
-                <option value='z-a'>Alphabetical; Z-A</option>
-                <option value='old-new'>Brew date; oldest - newest</option>
-                <option value='new-old'>Brew date; newest - oldest</option>
-            </select>
+            <label>View order</label>
+            <button value='a-z' onClick={orderChoice}>Alphabetical; A-Z</button>
+            <button value='z-a' onClick={orderChoice}>Alphabetical; Z-A</button>
+            <button value='old-new' onClick={orderChoice}>Brew date; oldest - newest</button>
+            <button value='new-old' onClick={orderChoice}>Brew date; newest - oldest</button>
         </div>
     )
 }
