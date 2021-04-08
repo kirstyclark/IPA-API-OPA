@@ -6,11 +6,9 @@ import styles from './NavBar.module.scss';
 
 const NavBar = (props) => {
 
-    const {reload} = props;
-
     return (
         <div className={`navbar ${styles.navbar}`}>
-            <div className={styles.home} onClick={() => reload()}>
+            <div className={styles.home} onClick={()=> window.location.reload()}>
                 <p>I</p>
                 <p>P</p>
                 <p>A</p>

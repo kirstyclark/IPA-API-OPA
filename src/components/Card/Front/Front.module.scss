@@ -10,10 +10,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 25vw;
+        height: 350px;
 
         img {
-            height: 22vw;
+            height: 300px;
         }
     }
 
@@ -31,7 +31,7 @@
             transform: rotate(180);
             font-family: $title-font;
             font-size: $font-s;
-            margin: 1vw;
+            margin: 10px;
         }
 
         .beerName {
