@@ -47,7 +47,6 @@ const CardList = (props) => {
                 return orderedArray
             })
         } else if (listOrder == 'old-new') {
-
             keyArray = (beers.map(
                 beer => {
                     const beeryear = beer.first_brewed.split("/")[1];

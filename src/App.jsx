@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import React, { useState, useEffect } from 'react';
 import styles from './App.module.scss';
 import './styles.scss';
-import Bubbles from './components/Bubbles/Bubbles.jsx';
 
 const App = () => {
 
@@ -37,7 +36,6 @@ const App = () => {
     <div className={`app ${styles.app}`}>
       <NavBar updateSearchText={fetchSearch} updateAbv={fetchAbv} updateOrder={order} />
       <CardList beers={beers} listOrder={listOrder} />
-      <Bubbles/>
     </div>
   )
 }
