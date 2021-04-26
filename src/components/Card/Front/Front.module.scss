@@ -1,5 +1,6 @@
 @import '../../../assets/styles.scss';
 
+
 .front {
     display: grid;
     grid-template-columns: 5fr 1fr;
@@ -10,11 +11,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 350px;
-
-        img {
-            height: 300px;
-        }
     }
 
     .textContainer {
@@ -30,18 +26,66 @@
             writing-mode: vertical-rl;
             transform: rotate(180);
             font-family: $title-font;
-            font-size: $font-s;
-            margin: 10px;
         }
 
         .beerName {
             text-transform: uppercase;
-            max-height: 15ch;
-            max-width: 3ch;
             overflow: hidden;
         }
     }
-    
-
 }
 
+
+@media screen and (min-width: 768px) {
+
+    .front {
+    
+        .imgContainer {
+            height: 350px;
+    
+            img {
+                height: 300px;
+            }
+        }
+    
+        .textContainer {  
+    
+            h2, h3 {
+                font-size: $font-s;
+                margin: 10px;
+            }
+    
+            .beerName {
+                max-height: 15ch;
+                max-width: 3ch;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    
+    .front {
+    
+        .imgContainer {
+            height: 220px;
+    
+            img {
+                height: 180px;
+            }
+        }
+    
+        .textContainer {  
+    
+            h2, h3 {
+                font-size: $font-xs;
+                margin: 8px;
+            }
+    
+            .beerName {
+                max-height: 13ch;
+                max-width: 3ch;
+            }
+        }
+    }
+}

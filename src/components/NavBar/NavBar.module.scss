@@ -1,24 +1,18 @@
 @import '../../assets/styles.scss';
 
 .navbar {
-    height: 100vh;
-    width: 25vw;
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    position: fixed;
 
     .home {
         font-family: $title-font;
         color: white;
-        font-size: 13vh;
-        line-height: 11vh;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        flex-direction: column;
 
         p {
             animation: rotate 5s infinite;
@@ -31,20 +25,61 @@
     }
 
     .navContainer {
-        height: 450px;
-        width: 240px;
         border: white 5px solid;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
 
         h4 {
-            padding: 5px;
-            margin-bottom: 10px;
             font-family: $primary-font;
             text-transform: uppercase;
             color: white;
-            font-size: $font-m;
+            padding: 5px;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .navbar {
+        height: 100vh;
+        width: 25vw;
+        position: fixed;
+        flex-direction: column;
+    
+        .home {
+            font-size: 13vh;
+            line-height: 11vh;
+        }
+    
+        .navContainer {
+            width: 240px;
+            flex-direction: column;
+    
+            h4 {
+                font-size: $font-m;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .navbar {
+        width: 100vw;
+        margin-bottom: 5vh;
+    
+        .home {
+            font-size: 10vh;
+            line-height: 8vh;
+            margin: 0 5vw;
+        }
+    
+        .navContainer {
+            background-color: $blue;
+    
+            h4 {
+                font-size: $font-s;
+            }
         }
     }
 }

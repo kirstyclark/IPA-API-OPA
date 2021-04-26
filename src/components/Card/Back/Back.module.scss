@@ -2,8 +2,6 @@
 
 .back {
     color: white;
-    padding: 1vw;
-    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,12 +9,10 @@
     h2 {
         font-family: $title-font;
         text-transform: uppercase;
-        margin-bottom: 10px;
     }
 
     h4 {
         font-style: italic;
-        margin-bottom: 10px;
     }
 
     h4, p {
@@ -24,8 +20,53 @@
     }
 
     .beerText {
-        overflow: hidden;
-        max-height: 220px;
-    }
+        overflow-y: scroll;
+    }   
+}
+
+@media screen and (min-width: 768px) {
+
+    .back {
+        padding: 1vw;
+        height: 300px;
     
+        h2 {
+            margin-bottom: 10px;
+        }
+    
+        h4 {
+            margin-bottom: 10px;
+        }
+    
+        .beerText {
+            max-height: 220px;
+            margin-bottom: 10px;
+        }   
+    }
+}
+
+@media screen and (max-width: 767px) {
+   
+    .back {
+        padding: 1vw;
+        height: 210px;
+    
+        h2 {
+            margin-bottom: 5px;
+            font-size: $font-s;
+        }
+    
+        h4 {
+            margin-bottom: 5px;
+        }
+
+        h4, p {
+            font-size: $font-xxs;
+        }
+    
+        .beerText {
+            max-height: 100px;
+            margin-bottom: 5px;
+        }   
+    }
 }

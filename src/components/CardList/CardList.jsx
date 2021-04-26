@@ -10,6 +10,35 @@ const CardList = (props) => {
         let keyArray;
         let orderedArray = [];
 
+        const mapNameArr = (arr) => {
+            arr.map((key) => {
+                beers.filter((beer) => {
+                    if (beer.name == key) {
+                        return orderedArray.push(beer);
+                    }
+                });
+                return orderedArray
+            })
+        }
+
+        const formatDate = (beer) => {
+            const beeryear = beer.first_brewed.split("/")[1];
+            const beermonth = beer.first_brewed.split("/")[0];
+            beer.formattedDate = `${beeryear} / ${beermonth}`
+            return beer;
+        }
+
+        const mapDateArr = (arr) => {
+            arr.map((key) => {
+                beers.filter((beer) => {
+                    if (beer.name == key.name) {
+                        return orderedArray.push(beer);
+                    }
+                });
+                return orderedArray
+            })
+        }
+
         if (listOrder == 'a-z'){
             keyArray = (beers.map(beer => beer.name)).sort((beer1, beer2) => {
                 if (beer1 < beer2 ) {
@@ -20,14 +49,7 @@ const CardList = (props) => {
                     return 0;
                 }
             });
-            keyArray.map((key) => {
-                beers.filter((beer) => {
-                    if (beer.name == key) {
-                        return orderedArray.push(beer);
-                    }
-                });
-                return orderedArray
-            })
+            mapNameArr(keyArray)
         } else if (listOrder == 'z-a') {
             keyArray = (beers.map(beer => beer.name)).sort((beer1, beer2) => {
                 if (beer2 < beer1 ) {
@@ -38,22 +60,11 @@ const CardList = (props) => {
                     return 0;
                 }
             });
-            keyArray.map((key) => {
-                beers.filter((beer) => {
-                    if (beer.name == key) {
-                        return orderedArray.push(beer);
-                    }
-                });
-                return orderedArray
-            })
+            mapNameArr(keyArray)
         } else if (listOrder == 'old-new') {
             keyArray = (beers.map(
-                beer => {
-                    const beeryear = beer.first_brewed.split("/")[1];
-                    const beermonth = beer.first_brewed.split("/")[0];
-                    beer.formattedDate = `${beeryear} / ${beermonth}`
-                    return beer;
-                }).sort((beer1, beer2) => {
+                beer => formatDate(beer) 
+                ).sort((beer1, beer2) => {
                 if (beer1.formattedDate < beer2.formattedDate ) {
                     return -1; 
                 } else if (beer1.formattedDate > beer2.formattedDate ) {
@@ -62,33 +73,20 @@ const CardList = (props) => {
                     return 0;
                 }
             }))
-            console.log(keyArray);
-            keyArray.map((key) => {
-                beers.filter((beer) => {
-                    if (beer.name == key) {
-                        return orderedArray.push(beer);
-                    }
-                });
-                return orderedArray
-            })
+            mapDateArr(keyArray)
         } else if (listOrder == 'new-old') {
-            keyArray = (beers.map(beer => beer.first_brewed)).sort((beer1, beer2) => {
-                if (beer2 < beer1 ) {
+            keyArray = (beers.map(
+                beer => formatDate(beer)
+                ).sort((beer1, beer2) => {
+                if (beer1.formattedDate > beer2.formattedDate ) {
                     return -1; 
-                } else if (beer2 > beer1) {
+                } else if (beer1.formattedDate < beer2.formattedDate ) {
                     return 1;
                 } else {
                     return 0;
                 }
-            });
-            keyArray.map((key) => {
-                beers.filter((beer) => {
-                    if (beer.name == key) {
-                        return orderedArray.push(beer);
-                    }
-                });
-                return orderedArray
-            })
+            }))
+            mapDateArr(keyArray)
         } else {
             return []
         }

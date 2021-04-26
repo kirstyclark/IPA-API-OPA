@@ -1,7 +1,5 @@
 import Order from '../Order';
 import SearchBar from '../SearchBar';
-import CheckBox from '../Checkbox'; 
-// import SlidingScale from '../SlidingScale';
 import styles from './NavBar.module.scss';
 
 const NavBar = (props) => {
@@ -14,10 +12,7 @@ const NavBar = (props) => {
                 <p>A</p>
             </div>
             <div className={styles.navContainer}>
-                <h4>Filter...</h4>
-                <SearchBar updateSearchText={props.updateSearchText}/>
-                <CheckBox updateAbv={props.updateAbv}/>
-                <h4>Order...</h4>
+                <SearchBar updateAbv={props.updateAbv} updateSearchText={props.updateSearchText}/>
                 <Order updateOrder={props.updateOrder}/>
             </div>
         </div>

@@ -10,6 +10,7 @@ const Order = (props) => {
 
     return (
         <div className={styles.order}>
+            <h4>Order...</h4>
             <button value='a-z' onClick={orderChoice}>Alphabetical; A-Z</button>
             <button value='z-a' onClick={orderChoice}>Alphabetical; Z-A</button>
             <button value='old-new' onClick={orderChoice}>Brew date; oldest - newest</button>

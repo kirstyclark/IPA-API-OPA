@@ -1,9 +1,24 @@
 @import '../../assets/styles.scss';
 
 .card {
-    height: 350px;
-    width: 260px;
     border: white 5px solid;
     display: inline-block;
-    margin: 20px 0;
+}
+
+@media screen and (min-width: 768px) {
+
+    .card {
+        height: 350px;
+        width: 260px;
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    
+    .card {
+        height: 220px;
+        width: 140px;
+        margin: 5vw;
+    }
 }

@@ -3,18 +3,45 @@
 .searchBar {
     
     margin: 1vh;
-
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
     input {
-        font-size: $font-m;
-        font-family: $primary-font;
         background-color: $blue;
         border: white 2px solid;
-        color: white;
+        font-size: $font-m;
+        font-family: $primary-font;
     }
 
-    input:focus {
+    input:focus, button:focus {
         background-color: white;
         color: $blue;
         border: $blue 2px solid;
     }
+    
+    button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 5px;
+        font: inherit;
+        outline: inherit;
+        margin-bottom: 1vh;
+        cursor: pointer;
+        font-size: $font-m;
+        font-family: $primary-font;
+    }
 }
+
+@media screen and (max-width: 767px) {
+
+    .searchBar {
+
+        h4, input, button {
+            font-size: $font-xs;
+        }
+    }
+}
+

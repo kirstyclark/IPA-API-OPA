@@ -25,3 +25,12 @@
         color: $blue;
     }
 }
+
+@media screen and (max-width: 767px) {
+
+    .order {
+        button {
+            font-size: $font-xs;
+        }
+    }
+}
