@@ -40,7 +40,8 @@ const CardList = (props) => {
         }
 
         if (listOrder == 'a-z'){
-            keyArray = (beers.map(beer => beer.name)).sort((beer1, beer2) => {
+            keyArray = (beers.map(beer => beer.name))
+                .sort((beer1, beer2) => {
                 if (beer1 < beer2 ) {
                     return -1; 
                 } else if (beer1 > beer2) {
@@ -51,7 +52,8 @@ const CardList = (props) => {
             });
             mapNameArr(keyArray)
         } else if (listOrder == 'z-a') {
-            keyArray = (beers.map(beer => beer.name)).sort((beer1, beer2) => {
+            keyArray = (beers.map(beer => beer.name))
+                .sort((beer1, beer2) => {
                 if (beer2 < beer1 ) {
                     return -1; 
                 } else if (beer2 > beer1) {
@@ -62,9 +64,8 @@ const CardList = (props) => {
             });
             mapNameArr(keyArray)
         } else if (listOrder == 'old-new') {
-            keyArray = (beers.map(
-                beer => formatDate(beer) 
-                ).sort((beer1, beer2) => {
+            keyArray = (beers.map(beer => formatDate(beer))
+                .sort((beer1, beer2) => {
                 if (beer1.formattedDate < beer2.formattedDate ) {
                     return -1; 
                 } else if (beer1.formattedDate > beer2.formattedDate ) {
@@ -75,9 +76,8 @@ const CardList = (props) => {
             }))
             mapDateArr(keyArray)
         } else if (listOrder == 'new-old') {
-            keyArray = (beers.map(
-                beer => formatDate(beer)
-                ).sort((beer1, beer2) => {
+            keyArray = (beers.map(beer => formatDate(beer))
+                .sort((beer1, beer2) => {
                 if (beer1.formattedDate > beer2.formattedDate ) {
                     return -1; 
                 } else if (beer1.formattedDate < beer2.formattedDate ) {
